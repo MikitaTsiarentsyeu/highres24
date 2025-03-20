@@ -1,0 +1,5 @@
+sum = float(input("input sum:"))
+procents = float(input("imput procent:"))
+period = float(input("input period:"))
+result = sum*((procents+1)**period)
+print(f'You will have {result}, after {period} years') 
