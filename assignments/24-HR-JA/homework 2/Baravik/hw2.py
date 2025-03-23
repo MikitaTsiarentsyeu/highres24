@@ -1,4 +1,5 @@
-sum = float(input("sum: "))
-proc = float(input("proc: ")) / 100
-invest = float(input("invest: "))
-print("final sum: {sum * (proc+1)**invest}")
+from decimal import Decimal as decimal
+sum = decimal(input("sum: "))
+proc = decimal(input("proc: ")) / 100
+invest = decimal(input("invest: "))
+print(f"final sum: {sum * (proc+1)**invest}")
