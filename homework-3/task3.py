@@ -32,4 +32,3 @@ elif minutes < 30:
 else:
     next_hour = hours + 1 if hours < 12 else 1
     print(f"{words[60 - minutes]} to {words[next_hour]}")
-#EgorKoptev

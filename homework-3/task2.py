@@ -17,4 +17,3 @@ elif discriminant == 0:
     print("Answer: ",root)
 else:
     print("Error")
-#EgorKoptev
