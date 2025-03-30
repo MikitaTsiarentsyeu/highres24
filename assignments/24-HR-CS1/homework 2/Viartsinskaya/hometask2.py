@@ -1,5 +1,0 @@
-startSum = float(input("Write start sum"))
-intRate = float(input("write interest rate"))
-investPeriod = float(input("Write investment period"))
-sum = startSum*((intRate+1)**investPeriod)
-print(f'In {investPeriod}, with an interest rate of {intRate}, you will have {sum}') 
