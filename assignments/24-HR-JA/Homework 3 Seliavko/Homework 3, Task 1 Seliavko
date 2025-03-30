@@ -1,0 +1,12 @@
+import math
+
+def solve_quadratic(a, b, c):
+    d = b**2 - 4*a*c
+    if d >= 0:
+        root1 = (-b + math.sqrt(d)) / (2 * a)
+        root2 = (-b - math.sqrt(d)) / (2 * a)
+        return f"{root1:.2f} {root2:.2f}" if d else f"{root1:.2f}"
+    return f"{-b / (2 * a):.2f} ± {math.sqrt(-d) / (2 * a):.2f}i"
+
+a, b, c = map(float, (input("a: "), input("b: "), input("c: ")))
+print("a cannot be zero" if a == 0 else solve_quadratic(a, b, c))

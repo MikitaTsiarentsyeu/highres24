@@ -1,0 +1,5 @@
+startSum = float (input ("Введите стартовый капитал: "))
+intRate = float (input ("Введите процент прибавки за месяц: "))
+invPeriod = float (input ("Введите срок: "))
+result = startSum * ((intRate + 1) ** invPeriod)
+print (result)
