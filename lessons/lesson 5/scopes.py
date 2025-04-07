@@ -1,36 +1,17 @@
+test = "global"
 
-x = "global"
-num = 5
+def tes_scopes(test):
+    test = 5
+    print(test)
 
-l = []
+p = "p"
+tes_scopes(p)
+print(p, test)
 
-def test():
-    x = "local"
-    global num
-    num += 2
-    print(x)
-    new_test = "local"
-    l.append(2)
+l=[]
 
-test()
-print(x, num, l)
-
-
-l = [1,2,3,4,5]
-
-def test(l:list):
+def modify_list():
     l.append(10)
 
-test(l)
-
+modify_list()
 print(l)
-
-
-for i in l:
-    i += 1
-
-print(i)
-
-# [xi for xi in range(10)]
-
-# print(xi)
