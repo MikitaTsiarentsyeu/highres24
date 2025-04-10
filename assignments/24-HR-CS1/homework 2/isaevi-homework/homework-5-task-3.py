@@ -1,0 +1,7 @@
+def kick_out(l: list, val: object) -> None:
+    l[:] = [x for x in l if x != val]
+
+if __name__ == '__main__':
+    members = [1, 2, 3, 2, 4, 2, 5]
+    kick_out(members, 2)
+    print(members)
