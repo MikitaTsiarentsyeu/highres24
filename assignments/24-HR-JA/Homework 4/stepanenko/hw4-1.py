@@ -11,3 +11,4 @@ for word in words:
 sortedWords = sorted(quantity, key=quantity.get)
 for word in sortedWords:
   print(f"Current word: {word}, quantity: {quantity[word]}")
+  
