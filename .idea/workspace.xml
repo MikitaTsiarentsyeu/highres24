@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfd08637-a5e8-4923-a230-8dd328e98f3b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/highres24.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/highres24.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignments/24-HR-CS2/homework 5/Bortsov/Task 1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignments/24-HR-CS2/homework 5/Bortsov/Task 2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignments/24-HR-CS2/homework 5/Bortsov/Task3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +39,11 @@
     "Python.Dz1.executor": "Run",
     "Python.Dz2.executor": "Run",
     "Python.Dz3.executor": "Run",
+    "Python.Task 1.executor": "Run",
+    "Python.Task 2.executor": "Run",
     "Python.Task1.executor": "Run",
     "Python.Task2.executor": "Run",
+    "Python.Task3.executor": "Run",
     "Python.homework2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -71,6 +77,8 @@
       <workItem from="1742989029309" duration="925000" />
       <workItem from="1743361017510" duration="592000" />
       <workItem from="1743523253730" duration="1881000" />
+      <workItem from="1743525391158" duration="654000" />
+      <workItem from="1744276735954" duration="681000" />
     </task>
     <servers />
   </component>
@@ -79,11 +87,13 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/highres24$HomeWork2.coverage" NAME="HomeWork2 Coverage Results" MODIFIED="1742229791039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignments/24-HR-CS2/homework 2/Bortsov_DZ2" />
+    <SUITE FILE_PATH="coverage/highres24$Task_2.coverage" NAME="Task 2 Coverage Results" MODIFIED="1744277162958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignments/24-HR-CS2/homework 5/Bortsov" />
     <SUITE FILE_PATH="coverage/highres24$Task2.coverage" NAME="Task2 Coverage Results" MODIFIED="1743524734208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignments/24-HR-CS2/Homework 4/Bortsov" />
     <SUITE FILE_PATH="coverage/highres24$Dz2.coverage" NAME="Dz2 Coverage Results" MODIFIED="1742989713107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignments/24-HR-CS2/Homework 3/Bortsov_dz3" />
     <SUITE FILE_PATH="coverage/highres24$Dz3.coverage" NAME="Dz3 Coverage Results" MODIFIED="1742744268321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignments/24-HR-CS2/Homework 3/Bortsov_dz3" />
     <SUITE FILE_PATH="coverage/highres24$homework2.coverage" NAME="homework2 Coverage Results" MODIFIED="1742230399685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignments/24-HR-CS2/homework 2/Bortsov_DZ2" />
     <SUITE FILE_PATH="coverage/highres24$Dz1.coverage" NAME="Dz1 Coverage Results" MODIFIED="1742739457278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignments/24-HR-CS2/Homework 3/Bortsov_dz3" />
+    <SUITE FILE_PATH="coverage/highres24$Task_1.coverage" NAME="Task 1 Coverage Results" MODIFIED="1744276966079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignments/24-HR-CS2/homework 5/Bortsov" />
     <SUITE FILE_PATH="coverage/highres24$Task1.coverage" NAME="Task1 Coverage Results" MODIFIED="1743525079595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignments/24-HR-CS2/Homework 4/Bortsov" />
   </component>
 </project>
