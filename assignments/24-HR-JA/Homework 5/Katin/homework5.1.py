@@ -1,7 +1,7 @@
 def fibonacci(n:int) -> int:
-    if n == 0:
+    if n == 1:
         return 0
-    elif n == 1 or n == 2:
+    elif n == 2 or n == 3:
         return 1
     else:
         n1 = 0
@@ -14,5 +14,5 @@ def fibonacci(n:int) -> int:
             n2 = n3
         return n3
 
-print(fibonacci(10))
+print(fibonacci(3))
 
