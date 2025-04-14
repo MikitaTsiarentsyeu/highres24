@@ -17,7 +17,7 @@ def printer():
 
 @timer
 def sleepFunction():
-    time.sleep(2)
+    time.sleep(1)
 
 @timer
 def Multiply():
