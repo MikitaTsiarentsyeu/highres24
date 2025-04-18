@@ -1,0 +1,33 @@
+import time
+import functools
+import random
+
+def timer(func):
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        start_time = time.time()
+        value = func(*args, **kwargs)
+        end_time = time.time()
+        run_time = end_time - start_time
+        print(f"Function '{func.__name__}' executed in {run_time:.4f} seconds")
+        return value
+    return wrapper_timer
+
+@timer
+def quick_addition():
+    return sum(range(1000))
+
+@timer
+def wait_loop():
+    for _ in range(3):
+        time.sleep(0.5)
+
+@timer
+def heavy_sort():
+    data = [random.random() for _ in range(10**6)]
+    data.sort()
+
+if __name__ == "__main__":
+    quick_addition()
+    wait_loop()
+    heavy_sort()
