@@ -5,8 +5,9 @@ def timer(func):
     end_time = time.time()
     return result, f"{end_time - start_time} seconds"
 
+@timer
 def hello_world():
-    time.sleep(10)  
+    time.sleep(1)  
     return "Hello, World!"
 
-print(timer(hello_world))
+print(hello_world)
