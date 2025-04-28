@@ -1,0 +1,8 @@
+def fib_gen(n, memo={0: 0, 1: 1}):
+    def fib(i):
+        if i not in memo:
+            memo[i] = fib(i - 1) + fib(i - 2)
+        return memo[i]
+
+    for i in range(n):
+        yield fib(i)
