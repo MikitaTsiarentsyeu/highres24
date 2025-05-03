@@ -1,7 +1,7 @@
 def combinations(lst, r):
     if r == 0:
         yield []
-    elif r > len(lst): 
+    elif r > len(lst):  
         return
     else:
         for i in range(len(lst)):

@@ -1,7 +1,7 @@
 def fib_gen(n):
     mem = {}
 
-    def fib(i):
+    def fib(i): 
         if i in mem:
             return mem[i]
         
@@ -12,7 +12,7 @@ def fib_gen(n):
         else:
             mem[i] = fib(i - 1) + fib(i - 2)
             return mem[i]
-
+ 
     for i in range(n):
         yield fib(i)
 
