@@ -1,10 +1,12 @@
+expressions = '+-*/()'
+
 def tokenize(expression):
     tokens = []
     number = ''
     for char in expression:
         if char.isdigit() or char == '.':
             number += char
-        elif char in '+-*/()':
+        elif char in expressions:
             if number:
                 tokens.append(float(number))
                 number = ''
@@ -49,14 +51,16 @@ def parse(tokens):
                 values.append(token)
             elif token in '+-*/':
                 while (operators and
-                       precedence[operators[-1]] >= precedence[token]):
+                       precedence[operators[-1]] >= precedence[token]):  # prioritize
                     apply_operator()
                 operators.append(token)
             elif token == '(':
-                result, index = parse_expression(index + 1)
-                values.append(result)
+                results, index = parse_expression(index + 1)
+                values.append(results)
             elif token == ')':
                 break
+            else:
+                raise ValueError("Unexpected error");
             index += 1
 
         while operators:
@@ -69,7 +73,7 @@ def parse(tokens):
 
 
 def calculator():
-    print("Type quit to exit")
+    print("Type quit to quit")
     while True:
         expression = input("Enter expression: ").strip()
         if expression.lower() == 'quit':
