@@ -1,0 +1,9 @@
+def combinations(lst, r):
+    if r == 0:
+        yield []
+    elif len(lst) < r:
+        return
+    else:
+        for i in range(len(lst)):
+            for tail in combinations(lst[i+1:], r-1):
+                yield [lst[i]] + tail
