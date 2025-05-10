@@ -1,0 +1,75 @@
+def read_words_from_file(filename):
+    with open(filename, 'r', encoding='utf-8') as file:
+        return file.read().split()
+
+
+def create_justified_line(words, line_width):
+    if len(words) == 1:
+        return words[0].ljust(line_width)
+
+    total_letters = sum(len(word) for word in words)
+    total_space = line_width - total_letters
+    space_slots = len(words) - 1
+
+    space_distribution = [' ' * (total_space // space_slots + (1 if i < total_space % space_slots else 0))
+                          for i in range(space_slots)]
+
+    justified = ''.join(
+        word + (space_distribution[i] if i < len(space_distribution) else '')
+        for i, word in enumerate(words)
+    )
+    return justified
+
+
+def justify_text(words, line_width):
+    result_lines = []
+    buffer = []
+    buffer_length = 0
+
+    for word in words:
+        if buffer_length + len(word) + len(buffer) > line_width:
+            result_lines.append(create_justified_line(buffer, line_width))
+            buffer = [word]
+            buffer_length = len(word)
+        else:
+            buffer.append(word)
+            buffer_length += len(word)
+
+    if buffer:
+        result_lines.append(' '.join(buffer).ljust(line_width))
+
+    return result_lines
+
+
+def write_to_file(lines, output_filename):
+    with open(output_filename, 'w', encoding='utf-8') as out_file:
+        for line in lines:
+            out_file.write(line + '\n')
+
+
+def run_justifier(min_chars=21):
+    input_file = 'input.txt'
+    output_file = 'output.txt'
+
+    try:
+        line_limit = int(input("Enter maximum characters per line (>20): "))
+        if line_limit < min_chars:
+            print(f" Error: value must be greater than {min_chars - 1}.")
+            return
+    except ValueError:
+        print("Please enter a valid integer.")
+        return
+
+    try:
+        words = read_words_from_file(input_file)
+    except FileNotFoundError:
+        print(f"File '{input_file}' not found.")
+        return
+
+    justified_result = justify_text(words, line_limit)
+    write_to_file(justified_result, output_file)
+    print(f"Done! Justified text written to '{output_file}'.")
+
+
+if __name__ == "__main__":
+    run_justifier()
