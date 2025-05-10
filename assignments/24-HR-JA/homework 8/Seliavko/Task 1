@@ -1,0 +1,94 @@
+OPERATORS = '+-*/()'
+
+def tokenize(expr):
+    result = []
+    num_buffer = ''
+    for ch in expr:
+        if ch.isdigit() or ch == '.':
+            num_buffer += ch
+        elif ch in OPERATORS:
+            if num_buffer:
+                result.append(float(num_buffer))
+                num_buffer = ''
+            result.append(ch)
+        elif ch == ' ':
+            if num_buffer:
+                result.append(float(num_buffer))
+                num_buffer = ''
+        else:
+            raise ValueError(f"Invalid symbol detected: '{ch}'")
+    if num_buffer:
+        result.append(float(num_buffer))
+    return result
+
+
+def evaluate(tokens):
+    def parse_expr(pos):
+        vals = []
+        ops = []
+
+        def operate():
+            b = vals.pop()
+            a = vals.pop()
+            op = ops.pop()
+            if op == '+':
+                vals.append(a + b)
+            elif op == '-':
+                vals.append(a - b)
+            elif op == '*':
+                vals.append(a * b)
+            elif op == '/':
+                if b == 0:
+                    raise ZeroDivisionError("Cannot divide by zero.")
+                vals.append(a / b)
+
+        priority = {'+': 1, '-': 1, '*': 2, '/': 2}
+
+        while pos < len(tokens):
+            tok = tokens[pos]
+
+            if isinstance(tok, float):
+                vals.append(tok)
+            elif tok in priority:
+                while ops and priority.get(ops[-1], 0) >= priority[tok]:
+                    operate()
+                ops.append(tok)
+            elif tok == '(':
+                inner_result, pos = parse_expr(pos + 1)
+                vals.append(inner_result)
+            elif tok == ')':
+                break
+            else:
+                raise ValueError(f"Unexpected token: {tok}")
+            pos += 1
+
+        while ops:
+            operate()
+
+        return vals[0], pos
+
+    final_result, _ = parse_expr(0)
+    return final_result
+
+
+def run_calculator():
+    print("Simple Calculator (type 'quit' to exit)")
+    while True:
+        user_input = input(">> ").strip()
+        if user_input.lower() == 'quit':
+            print("Goodbye!")
+            break
+        try:
+            tokens = tokenize(user_input)
+            output = evaluate(tokens)
+            print(f"= {output}")
+        except ZeroDivisionError as zde:
+            print("Error:", zde)
+        except ValueError as ve:
+            print("Error:", ve)
+        except Exception as ex:
+            print("Unexpected error:", ex)
+
+
+if __name__ == "__main__":
+    run_calculator()
