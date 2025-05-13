@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
     print()  
 
-    volvo_truck = Truck("Volvo", "FH16", 2021, payload_capacity_tons=25.0)
+    volvo_truck = Truck("Volvo", "FH15", 2021, payload_capacity_tons=25.0)
     volvo_truck.start()
     volvo_truck.load_cargo(20.0)
     volvo_truck.load_cargo(30.0)
