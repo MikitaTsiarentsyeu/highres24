@@ -18,11 +18,11 @@ try:
         sqrt_d = math.sqrt(discriminant)
         root1 = (-b + sqrt_d) / (2*a)
         root2 = (-b - sqrt_d) / (2*a)
-        print(f"Two distinct real roots: {root1:.2f} and {root2:.2f}")
+        print(f"Two distinct real roots: {root1:.2f} and {root2:.2f}") #округления числа (float) до 2 знаков после запятой при выводе.
         
     elif discriminant == 0:
         root = -b / (2*a)
-        print(f"One real root (repeated): {root:.2f}")
+        print(f"One real r oot (repeated): {root:.2f}")
         
     else:
         real_part = -b / (2*a)
