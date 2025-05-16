@@ -57,3 +57,4 @@ def main():
             file.write(line + '\n')
 
     print(f"Форматированный текст записан в '{output_path}'.")
+    
