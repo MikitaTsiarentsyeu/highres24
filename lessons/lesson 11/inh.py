@@ -1,31 +1,59 @@
-class A:
+from abc import ABC, abstractmethod
 
-    def __init__(self, test_atr):
-        self.test_atr = test_atr     
+class Test_Parent:
 
-    atr_a = "value from A"
+    test_atr = "test value"
 
-
-    def method_a(self):
-        print("method from A")
+    def test_method(self):
+        print("test method")
 
 
-class B(A):
+class Test_Child(Test_Parent): pass
 
-    def __init__(self, test_atr, new_atr):
-        super().__init__(test_atr)
-        self.new_atr = new_atr
+tc = Test_Child()
 
-    atr_a = "VALUIE FROM B"
+print(tc.test_atr)
+tc.test_method()
 
-    def method_a(self):
-        print("method from B")
+Test_Child.test_atr = "child test value"
 
-b = B("test value", "new value")
-print(b.atr_a)
-b.method_a()
+print(Test_Child.__dict__)
+print(Test_Parent.__dict__)
 
-print(B.__dict__)
-print(A.__dict__)
 
-print(getattr(b, 'atr_a'))
+class Dog(ABC):
+
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    @abstractmethod
+    def woof(self):
+        print("bark!")
+
+
+class HuntingDog(Dog):
+
+    def hunt(self, target):
+        print(f"got the {target}")
+
+    def woof(self):
+        return super().woof()
+
+class SmartDog(Dog):
+
+    def __init__(self, name, breed, age):
+        super().__init__(name, breed)
+        self.age = age
+
+    def woof(self):
+        for i in range(self.age):
+            super().woof()
+
+    # def woof(self):
+    #     print(self.age*"bark!")
+
+sd = SmartDog("Bobby", "poodl", 5)
+sd.woof()
+
+hd = HuntingDog("Bobby", "poodl")
