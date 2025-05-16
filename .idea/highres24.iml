@@ -12,7 +12,7 @@
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/assignments/24-HR-CS1" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.13 (Python ORMs Homework)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Python 3.10 (highres24) interpreter library" level="application" />
   </component>
