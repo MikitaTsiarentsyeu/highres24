@@ -19,6 +19,7 @@ class Rectangle:
         else:
             print("Length and width must be positive numbers.")
 
+
 rect1 = Rectangle(10, 5)
 rect2 = Rectangle(7, 3)
 
