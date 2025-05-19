@@ -23,7 +23,7 @@ def sort_big_list():
 @functiontimer
 def wait_task():
     time.sleep(2)
-    print("Waited for 2 seconds")
+    print("Waited for 2 seconds:")
 
 quick_sum()
 sort_big_list()

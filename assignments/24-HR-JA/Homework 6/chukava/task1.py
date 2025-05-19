@@ -13,4 +13,4 @@ def custom_sort(iterable, key_func):
 
 nums = [10, 3, 5, 8, 6, 7]
 sorted_by_mod = custom_sort(nums, key_func=lambda x: x % 3)
-print("Sorted by x % 3:", sorted_by_mod)
+print("Sorted by x % 3: ", sorted_by_mod)
