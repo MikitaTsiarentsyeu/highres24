@@ -34,8 +34,3 @@ account1 = BankAccount(2, "Jhon Snow")
 account1.deposit(1300)
 account1.withdraw(193)
 print(account1.get_balance())
-
-
-
-        
-        
