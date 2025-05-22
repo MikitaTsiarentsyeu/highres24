@@ -15,7 +15,6 @@ def timer(func):
     return wrapper
 
 
-# Сортировка пузырьком с ключом
 @timer
 def custom_sort_bubble(iterable, key_func):
     l = list(iterable)
