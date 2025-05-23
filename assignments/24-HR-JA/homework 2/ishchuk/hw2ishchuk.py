@@ -1,0 +1,5 @@
+startingSum = float (input("enter the initial amount: "))
+interestRate = float (input("enter the interest percentage rate: "))
+investmentPeriod = float (input("enter the investment period: "))
+resultSum = startingSum * ((interestRate + 1) ** investmentPeriod)
+print(resultSum)

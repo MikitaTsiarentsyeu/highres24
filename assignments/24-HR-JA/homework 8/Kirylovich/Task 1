@@ -1,0 +1,81 @@
+def tokenize(expression):
+    tokens = []
+    num = ''
+    for char in expression:
+        if char.isdigit() or char == '.':
+            num += char
+        elif char in '+-*/()':
+            if num:
+                tokens.append(float(num))
+                num = ''
+            tokens.append(char)
+        elif char.isspace():
+            if num:
+                tokens.append(float(num))
+                num = ''
+        else:
+            raise ValueError(f"Invalid character: '{char}'")
+    if num:
+        tokens.append(float(num))
+    return tokens
+
+def parse_expression(tokens):
+    def parse_term(index):
+        if tokens[index] == '(':
+            value, index = parse_add_sub(index + 1)
+            if index >= len(tokens) or tokens[index] != ')':
+                raise ValueError("Mismatched parentheses")
+            return value, index + 1
+        elif isinstance(tokens[index], float):
+            return tokens[index], index + 1
+        else:
+            raise ValueError(f"Unexpected token: {tokens[index]}")
+
+    def parse_mul_div(index):
+        left, index = parse_term(index)
+        while index < len(tokens) and tokens[index] in ('*', '/'):
+            op = tokens[index]
+            right, next_index = parse_term(index + 1)
+            if op == '*':
+                left *= right
+            elif op == '/':
+                if right == 0:
+                    raise ZeroDivisionError("Division by zero")
+                left /= right
+            index = next_index
+        return left, index
+
+    def parse_add_sub(index):
+        left, index = parse_mul_div(index)
+        while index < len(tokens) and tokens[index] in ('+', '-'):
+            op = tokens[index]
+            right, next_index = parse_mul_div(index + 1)
+            if op == '+':
+                left += right
+            elif op == '-':
+                left -= right
+            index = next_index
+        return left, index
+
+    result, final_index = parse_add_sub(0)
+    if final_index != len(tokens):
+        raise ValueError("Unexpected token at the end")
+    return result
+
+def calculator():
+    print("Simple Calculator (type 'quit' to exit)")
+    while True:
+        expr = input("Enter expression: ").strip()
+        if expr.lower() in ('quit', 'exit'):
+            print("Goodbye!")
+            break
+        try:
+            tokens = tokenize(expr)
+            result = parse_expression(tokens)
+            print("Result:", result)
+        except ZeroDivisionError as zde:
+            print("Math Error:", zde)
+        except ValueError as ve:
+            print("Input Error:", ve)
+        except Exception as e:
+            print("Unknown Error:", e)
