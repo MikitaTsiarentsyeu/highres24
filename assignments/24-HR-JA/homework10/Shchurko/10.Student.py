@@ -27,6 +27,7 @@ student1.add_grade(85)
 student1.add_grade(90)
 student2.add_grade(18)
 student2.add_grade(82)
+student1.add_grade(65)
 
 print(student1.get_student_info())
 print(student2.get_student_info())
