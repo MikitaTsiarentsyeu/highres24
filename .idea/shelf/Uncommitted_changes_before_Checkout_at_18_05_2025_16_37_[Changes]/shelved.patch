@@ -1,0 +1,17 @@
+Index: .idea/highres24.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"WEB_MODULE\" version=\"4\">\r\n  <component name=\"FacetManager\">\r\n    <facet type=\"Python\" name=\"Python facet\">\r\n      <configuration sdkName=\"Python 3.10 (highres24)\" />\r\n    </facet>\r\n  </component>\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <excludeFolder url=\"file://$MODULE_DIR$/.tmp\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/temp\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/tmp\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/assignments/24-HR-CS1\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.13 (Python ORMs Homework)\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"library\" name=\"Python 3.10 (highres24) interpreter library\" level=\"application\" />\r\n  </component>\r\n</module>
+===================================================================
+diff --git a/.idea/highres24.iml b/.idea/highres24.iml
+--- a/.idea/highres24.iml	(revision cce52e2b4a239e9225b5c6e6e85c68fd7450b4c5)
++++ b/.idea/highres24.iml	(date 1747575219615)
+@@ -12,7 +12,7 @@
+       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+       <excludeFolder url="file://$MODULE_DIR$/assignments/24-HR-CS1" />
+     </content>
+-    <orderEntry type="jdk" jdkName="Python 3.13 (Python ORMs Homework)" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.9" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+     <orderEntry type="library" name="Python 3.10 (highres24) interpreter library" level="application" />
+   </component>
