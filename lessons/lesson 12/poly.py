@@ -1,41 +1,31 @@
-
 class Parent:
 
     def test_method(self):
-        print("parent")
+        print("Parent")
 
-class Child(Parent):
-    
+class Child:
+
     def test_method(self):
-        print("child")
+        print("Child")
 
 p = Parent()
 c = Child()
 
-p.test_method()
-c.test_method()
+# p.test_method()
+# c.test_method()
 
-def Test_Method_Call(obj: Parent):
-    obj.test_method()
+def call_test_method(instance: Parent):
+    instance.test_method()
 
-
-for i in [p, c, object, "test"]:
-    try:
-        Test_Method_Call(i)
-    except AttributeError:
-        print("the object does not implement .test_method()")
+# for i in [p, c]:
+#     call_test_method(i)
 
 
-def test_add(a, b):
-    return a+b
+print(2 + 3)
+print('2' + '3')
 
-print(test_add(2, 3))
-print(test_add('2', '3'))
-
+print(int(2).__add__(3))
 print('2'.__add__('3'))
-
-print(dir(str))
-print(dir(int))
 
 
 class FreightTrain:
@@ -46,34 +36,34 @@ class FreightTrain:
     def __str__(self):
         return f"{FreightTrain.__name__}({self.cart_count})"
     
-    def __int__(self):
-        return self.cart_count
-    
     def __eq__(self, other):
-        if id(self) == id(other):
-            return True
         
-        # if str(self) == str(other):
-        #     return True
-
         try:
             if self.cart_count == other.cart_count:
                 return True
         except AttributeError:
             return False
+
         
         return False
     
-    def __len__(self):
-        return self.cart_count
+    def __add__(self, other):
+        try:
+            return FreightTrain(self.cart_count + other.cart_count)
+        except AttributeError:
+            raise TypeError("cannot add non-FreightTrain object")
     
+ft = FreightTrain(5)
+print(ft)
 
-f = FreightTrain(2)
-print(f, int(f))
+print(ft == ft)
+print(ft == FreightTrain(5))
+print(ft == FreightTrain(10))
+print(ft == 5)
 
+print(ft + FreightTrain(10))
+# print(5 + ft)
+# int(5).__add__(ft)
 
-new_f = FreightTrain(10)
-print(f == new_f)
-print(f == FreightTrain(2))
-print(f == 2)
-print(len(f))
+print(ft + 5)
+ft.__add__(5)
