@@ -1,5 +1,6 @@
 from decimal import Decimal
-a = Decimal(input("Start number\n")) 
-b = Decimal(input("Discount\n"))
-c = Decimal(input("Invest Period\n"))
-print("result:", a*(1+b/100)**c)
+start = float(input("Initial capital: "))
+rate = float(input("Annual interest rate (%): "))
+period = int(input("Investment period (years): "))
+result = start * (1 + rate / 100) ** period
+print("Final amount:", result)
